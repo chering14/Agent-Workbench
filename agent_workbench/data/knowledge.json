@@ -1,0 +1,37 @@
+[
+  {
+    "id": "IT-001",
+    "title": "VPN 连接排查",
+    "tenant_id": "acme",
+    "roles": ["employee", "it_admin"],
+    "content": "VPN 连接失败时，先检查本地网络，再确认客户端地址为 vpn.example.invalid。若提示验证码过期，请重新获取验证码。连续失败请联系 IT 服务台。此条为虚构演示资料。"
+  },
+  {
+    "id": "IT-002",
+    "title": "账号密码重置",
+    "tenant_id": "acme",
+    "roles": ["employee", "it_admin"],
+    "content": "忘记账号密码时，打开企业身份门户，选择重置密码，完成身份验证后设置新密码。身份验证失败时联系 IT 服务台，不要向他人提供密码或验证码。此条为虚构演示资料。"
+  },
+  {
+    "id": "HR-001",
+    "title": "年假申请流程",
+    "tenant_id": "acme",
+    "roles": ["employee", "it_admin"],
+    "content": "年假申请需提前三个工作日在办公系统提交，填写起止日期，提交后由直属经理审批。可用天数以系统显示为准。此条为虚构演示资料。"
+  },
+  {
+    "id": "SEC-001",
+    "title": "生产密钥轮换",
+    "tenant_id": "acme",
+    "roles": ["it_admin"],
+    "content": "生产密钥轮换仅限 IT 管理员执行，必须先创建变更记录，再在凭据管理平台生成新版本并验证服务，最后撤销旧版本。此条为虚构演示资料，不含真实密钥。"
+  },
+  {
+    "id": "BETA-001",
+    "title": "猎户计划客户名单",
+    "tenant_id": "beta",
+    "roles": ["employee", "it_admin"],
+    "content": "猎户计划客户名单为北星示例公司与南云示例公司，仅供 beta 租户演示。此条为虚构演示资料。"
+  }
+]

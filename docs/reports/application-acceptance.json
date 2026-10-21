@@ -1,0 +1,90 @@
+{
+  "suite": "application_synthetic_acceptance_v1",
+  "mode": "demo",
+  "total": 20,
+  "passed": 20,
+  "pass_rate": 1.0,
+  "checks": [
+    {
+      "id": "vpn",
+      "passed": true
+    },
+    {
+      "id": "password",
+      "passed": true
+    },
+    {
+      "id": "leave",
+      "passed": true
+    },
+    {
+      "id": "missing",
+      "passed": true
+    },
+    {
+      "id": "related_without_answer",
+      "passed": true
+    },
+    {
+      "id": "role_denied",
+      "passed": true
+    },
+    {
+      "id": "role_allowed",
+      "passed": true
+    },
+    {
+      "id": "tenant_denied",
+      "passed": true
+    },
+    {
+      "id": "tenant_allowed",
+      "passed": true
+    },
+    {
+      "id": "document_import",
+      "passed": true
+    },
+    {
+      "id": "document_version",
+      "passed": true
+    },
+    {
+      "id": "draft_without_write",
+      "passed": true
+    },
+    {
+      "id": "approval",
+      "passed": true
+    },
+    {
+      "id": "idempotent_approval",
+      "passed": true
+    },
+    {
+      "id": "admin_status",
+      "passed": true
+    },
+    {
+      "id": "reject",
+      "passed": true
+    },
+    {
+      "id": "audit",
+      "passed": true
+    },
+    {
+      "id": "trace",
+      "passed": true
+    },
+    {
+      "id": "persistence",
+      "passed": true
+    },
+    {
+      "id": "restart_recovery",
+      "passed": true
+    }
+  ],
+  "limitation": "Synthetic engineering checks only. No real LLM quality, production load, or cloud deployment is measured."
+}

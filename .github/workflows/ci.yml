@@ -1,0 +1,29 @@
+name: Application quality checks
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install locked dependencies
+        run: python -m pip install --require-hashes -r requirements-dev.lock
+      - name: Tests
+        run: python -m pytest -q
+      - name: Static checks
+        run: python -m ruff check agent_workbench tests
+      - name: Original baseline regression
+        run: python -m agent_workbench eval
+      - name: Full application acceptance
+        run: python -m agent_workbench app-eval

@@ -1,0 +1,18 @@
+[
+  {"slug":"00-start","title":"运行成品与学习方法"},
+  {"slug":"01-product","title":"业务问题与系统全景"},
+  {"slug":"02-python","title":"Python、契约与模块边界"},
+  {"slug":"03-data","title":"SQLite、事务与状态恢复"},
+  {"slug":"04-auth","title":"认证、权限与信任边界"},
+  {"slug":"05-retrieval","title":"文档分段与 BM25 检索"},
+  {"slug":"06-model","title":"模型接口与工具调用协议"},
+  {"slug":"07-agents","title":"Agent 循环与独立审核"},
+  {"slug":"08-evidence","title":"引用、充分性与拒答"},
+  {"slug":"09-tickets","title":"工单确认、幂等与审计"},
+  {"slug":"10-api","title":"FastAPI、后台任务与 SSE"},
+  {"slug":"11-ui","title":"前端状态、DOM 与交互"},
+  {"slug":"12-tests","title":"测试、评测与实验设计"},
+  {"slug":"13-operations","title":"配置、部署与排障"},
+  {"slug":"14-extension","title":"功能修改与技术答辩"},
+  {"slug":"15-walkthrough","title":"完整代码走读与练习答案"}
+]

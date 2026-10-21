@@ -1,0 +1,19 @@
+services:
+  workbench:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    env_file:
+      - .env
+    environment:
+      APP_DB_PATH: /app/var/agent_workbench.db
+    volumes:
+      - workbench-data:/app/var
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  workbench-data:

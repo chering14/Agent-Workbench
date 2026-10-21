@@ -1,0 +1,12 @@
+[
+  {"id":"vpn-basic","question":"VPN 连接失败","tenant_id":"acme","role":"employee","expected_status":"evidence_found","expected_citation_ids":["IT-001"]},
+  {"id":"vpn-case-insensitive","question":"vpn","tenant_id":"acme","role":"employee","expected_status":"evidence_found","expected_citation_ids":["IT-001"]},
+  {"id":"password-reset","question":"账号密码重置","tenant_id":"acme","role":"employee","expected_status":"evidence_found","expected_citation_ids":["IT-002"]},
+  {"id":"annual-leave","question":"年假申请流程","tenant_id":"acme","role":"employee","expected_status":"evidence_found","expected_citation_ids":["HR-001"]},
+  {"id":"unknown-question","question":"火星基地停机坪坐标","tenant_id":"acme","role":"employee","expected_status":"insufficient_evidence","expected_citation_ids":[]},
+  {"id":"role-denied","question":"生产密钥轮换","tenant_id":"acme","role":"employee","expected_status":"insufficient_evidence","expected_citation_ids":[]},
+  {"id":"role-allowed","question":"生产密钥轮换","tenant_id":"acme","role":"it_admin","expected_status":"evidence_found","expected_citation_ids":["SEC-001"]},
+  {"id":"tenant-denied","question":"猎户计划客户名单","tenant_id":"acme","role":"employee","expected_status":"insufficient_evidence","expected_citation_ids":[]},
+  {"id":"tenant-allowed","question":"猎户计划客户名单","tenant_id":"beta","role":"employee","expected_status":"evidence_found","expected_citation_ids":["BETA-001"]},
+  {"id":"empty-tenant","question":"VPN","tenant_id":"unknown","role":"employee","expected_status":"insufficient_evidence","expected_citation_ids":[]}
+]

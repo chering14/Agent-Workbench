@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-workbench"
+version = "1.0.0"
+description = "An evidence-first learning project for enterprise agent engineering."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.153.0",
+    "uvicorn==0.54.0",
+    "httpx==0.28.1",
+    "python-dotenv==1.2.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "ruff==0.17.1"]
+
+[project.scripts]
+agent-workbench = "agent_workbench.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["agent_workbench*"]
+
+[tool.setuptools.package-data]
+agent_workbench = ["data/*.json", "web/*.html", "web/*.css", "web/*.js", "tutorials/*.md", "tutorials/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

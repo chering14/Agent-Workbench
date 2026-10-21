@@ -1,0 +1,81 @@
+{
+  "suite": "m0_synthetic_smoke_v1",
+  "total": 10,
+  "passed": 10,
+  "pass_rate": 1.0,
+  "cases": [
+    {
+      "id": "vpn-basic",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "IT-001"
+      ]
+    },
+    {
+      "id": "vpn-case-insensitive",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "IT-001"
+      ]
+    },
+    {
+      "id": "password-reset",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "IT-002"
+      ]
+    },
+    {
+      "id": "annual-leave",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "HR-001"
+      ]
+    },
+    {
+      "id": "unknown-question",
+      "passed": true,
+      "status": "insufficient_evidence",
+      "citation_ids": []
+    },
+    {
+      "id": "role-denied",
+      "passed": true,
+      "status": "insufficient_evidence",
+      "citation_ids": []
+    },
+    {
+      "id": "role-allowed",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "SEC-001"
+      ]
+    },
+    {
+      "id": "tenant-denied",
+      "passed": true,
+      "status": "insufficient_evidence",
+      "citation_ids": []
+    },
+    {
+      "id": "tenant-allowed",
+      "passed": true,
+      "status": "evidence_found",
+      "citation_ids": [
+        "BETA-001"
+      ]
+    },
+    {
+      "id": "empty-tenant",
+      "passed": true,
+      "status": "insufficient_evidence",
+      "citation_ids": []
+    }
+  ],
+  "limitation": "Synthetic smoke cases only; not production quality or an LLM benchmark."
+}

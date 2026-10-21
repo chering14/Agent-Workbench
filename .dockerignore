@@ -1,0 +1,12 @@
+.git
+.venv
+.cache
+.env
+.env.*
+var
+output
+artifacts
+__pycache__
+.pytest_cache
+.ruff_cache
+tests
