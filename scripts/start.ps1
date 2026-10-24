@@ -5,7 +5,7 @@ if (-not (Test-Path -LiteralPath $projectPython)) {
     python -m venv .venv
     if ($LASTEXITCODE -ne 0) { throw 'Python 3.11+ is required.' }
 }
-& $projectPython -c 'import fastapi, uvicorn, httpx, dotenv' 2>$null
+& $projectPython -c 'import fastapi, uvicorn, httpx, dotenv, mcp, keyring, playwright, jsonschema, yaml' 2>$null
 if ($LASTEXITCODE -ne 0) {
     & $projectPython -m ensurepip --upgrade
     & $projectPython -m pip install --require-hashes -r requirements.lock

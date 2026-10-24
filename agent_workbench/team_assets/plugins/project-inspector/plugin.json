@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "project-inspector",
+  "version": "1.0.0",
+  "description": "统计工作副本中的常见源码文件，不进行网络访问或文件修改。",
+  "tools": [{
+    "name": "count_source_files",
+    "description": "统计当前工作副本里的 Python、JavaScript、HTML 和 Markdown 文件数量。",
+    "input_schema": {"type": "object", "properties": {}, "additionalProperties": false},
+    "argv": ["python", "{plugin_dir}/inspect_project.py", "{workspace}"],
+    "timeout": 10
+  }]
+}

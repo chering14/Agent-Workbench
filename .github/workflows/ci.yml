@@ -19,11 +19,15 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Install locked dependencies
         run: python -m pip install --require-hashes -r requirements-dev.lock
-      - name: Tests
+      - name: Install browser runtime
+        run: python -m playwright install --with-deps chromium
+      - name: Behavioral and regression tests
         run: python -m pytest -q
       - name: Static checks
         run: python -m ruff check agent_workbench tests
       - name: Original baseline regression
         run: python -m agent_workbench eval
-      - name: Full application acceptance
+      - name: Legacy v1 synthetic acceptance
         run: python -m agent_workbench app-eval
+      - name: Frontend syntax
+        run: node --check agent_workbench/team_web/app.js

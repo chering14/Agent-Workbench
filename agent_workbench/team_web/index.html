@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Workbench · 本地工作群</title><link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Agent Workbench 首页"><span class="brand-icon">a<span>w</span></span><div>Agent Workbench<small>一个人，一支团队。</small></div></a>
+    <button class="new-project" id="new-project">＋ 创建项目 <span>↗</span></button>
+    <nav aria-label="主导航"><button class="active" data-view="chat" aria-label="工作群">◈ <span>工作群</span></button><button data-view="members" aria-label="团队成员">◎ <span>团队成员</span></button><button data-view="extensions" aria-label="能力中心">⌘ <span>能力中心</span></button><button data-view="learn" aria-label="学习手册">▤ <span>学习手册</span></button></nav>
+    <div class="section-caption">我的项目</div><div id="projects" class="projects"></div>
+    <div class="sidebar-footer"><span class="online-dot"></span> 本地运行 · 无需登录<small>文件与任务保存在这台电脑上</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumb">工作空间 <span>/</span> <strong id="project-name">加载中…</strong></div><select id="project-switch" class="project-switch" aria-label="切换项目"></select><div class="top-actions"><span id="stream-status" class="pill">连接中</span><button id="project-settings" class="quiet">项目设置</button><span class="version">v2.0</span></div></header>
+    <section id="view-chat" class="view chat-view">
+      <div class="conversation">
+        <div class="room-heading"><div><span class="eyebrow">YOUR LOCAL TEAM</span><h1>让想法，开始一起工作<span>。</span></h1><p id="project-brief">分配任务，查看成果，让合适的模型接着做。</p></div><div id="member-stack" class="member-stack"></div></div>
+        <div class="room-note"><span>↳</span><p>任务在独立工作副本执行，检查差异后合入。演示成员使用固定规则；真实开发请添加模型。</p></div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="composer" class="composer"><label class="sr-only" for="message">给团队的消息或任务</label><textarea id="message" rows="3" maxlength="16000" placeholder="描述项目目标，安排一个任务，或者 @成员 继续工作…" required></textarea><div class="composer-tools"><div><select id="message-action" aria-label="消息类型"><option value="task">分配任务</option><option value="plan">自动规划</option><option value="message">仅发消息</option></select><select id="message-member" aria-label="负责人"><option value="">自动选择成员</option></select></div><button type="submit" class="send" id="send">发送 <span>↑</span></button></div></form>
+        <div class="composer-foot">Enter 发送 · Shift + Enter 换行 <span>你可以随时调整分工</span></div>
+      </div>
+      <aside class="task-panel"><div class="panel-title"><h2>项目任务</h2><button id="new-task" class="small-button">＋ 新任务</button></div><div class="task-toolbar"><span id="task-count">0 项任务</span><button id="start-drafts" class="text-button">开始草稿任务</button></div><div id="tasks" class="tasks"></div><div class="budget-panel"><div class="panel-title"><h3>项目用量</h3><span class="tiny">累计</span></div><div class="budget-number" id="budget-tokens">0 <small>tokens</small></div><progress id="budget-bar" value="0" max="100"></progress><p id="budget-detail"></p><button id="usage-details" class="text-button">查看调用账单 ↗</button></div></aside>
+    </section>
+    <section id="view-members" class="view full-view" hidden><div class="view-heading"><div><span class="eyebrow">BUILD YOUR TEAM</span><h1>每位成员，各有所长。</h1><p>接入自己的模型，设置职责和档位。模型费用以你填写的美元单价估算。</p></div><button id="add-member" class="primary">＋ 添加成员</button></div><div id="members" class="card-grid"></div></section>
+    <section id="view-extensions" class="view full-view" hidden><div class="view-heading"><div><span class="eyebrow">TOOLS FOR THE JOB</span><h1>让团队拥有工作的能力。</h1><p>按需加载技能，连接 MCP，导入可复用的工具插件。</p></div><button id="add-extension" class="primary">＋ 添加能力</button></div><div class="capability-strip"><div>⌁ <strong>代码与文件</strong><small>工作副本读写、检索、差异</small></div><div>▣ <strong>命令与验证</strong><small>授权执行、超时与取消</small></div><div>◉ <strong>浏览器检查</strong><small>静态页面交互、截图</small></div></div><div id="extensions" class="card-grid"></div></section>
+    <section id="view-learn" class="view learn-view" hidden><aside><span class="eyebrow">LEARN BY BUILDING</span><h2>理解你的 AI 团队</h2><p>从一次任务，读懂整个系统。</p><div id="chapters"></div></aside><article id="chapter" class="prose"></article></section>
+  </main>
+  <dialog id="dialog"><div class="dialog-heading"><h2 id="dialog-title"></h2><button id="close-dialog" class="close" aria-label="关闭">×</button></div><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

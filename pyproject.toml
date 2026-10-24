@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-workbench"
-version = "1.0.0"
-description = "An evidence-first learning project for enterprise agent engineering."
+version = "2.0.0"
+description = "A local multi-model software team with task handoffs, skills, MCP and complete tutorials."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -13,6 +13,11 @@ dependencies = [
     "uvicorn==0.54.0",
     "httpx==0.28.1",
     "python-dotenv==1.2.4",
+    "mcp==2.3.0",
+    "keyring==25.7.0",
+    "playwright==1.64.0",
+    "jsonschema==4.26.0",
+    "PyYAML==6.0.3",
 ]
 
 [project.optional-dependencies]
@@ -25,7 +30,7 @@ agent-workbench = "agent_workbench.__main__:main"
 include = ["agent_workbench*"]
 
 [tool.setuptools.package-data]
-agent_workbench = ["data/*.json", "web/*.html", "web/*.css", "web/*.js", "tutorials/*.md", "tutorials/*.json"]
+agent_workbench = ["data/*.json", "web/*.html", "web/*.css", "web/*.js", "tutorials/*.md", "tutorials/*.json", "tutorials/team/*", "team_web/*", "team_assets/skills/*/*.md", "team_assets/plugins/*/*.json", "team_assets/plugins/*/*.py"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

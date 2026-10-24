@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     environment:
-      APP_DB_PATH: /app/var/agent_workbench.db
+      TEAM_DATA_DIR: /app/var/team
     volumes:
       - workbench-data:/app/var
     restart: unless-stopped

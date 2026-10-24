@@ -15,7 +15,7 @@ def main() -> int:
     # Keep Chinese output readable in UTF-8 terminals and redirected CI output.
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="Agent Workbench: offline M0 baseline")
+    parser = argparse.ArgumentParser(description="Agent Workbench: local software teams")
     commands = parser.add_subparsers(dest="command", required=True)
     ask = commands.add_parser("ask", help="Search synthetic knowledge and preserve citations")
     ask.add_argument("question")
@@ -30,6 +30,11 @@ def main() -> int:
     serve = commands.add_parser("serve", help="Start the complete web application")
     serve.add_argument("--host", default=None)
     serve.add_argument("--port", type=int, default=None)
+    serve.add_argument(
+        "--container",
+        action="store_true",
+        help="Permit 0.0.0.0 inside a container whose host port is bound to loopback",
+    )
     args = parser.parse_args()
     if args.command == "app-eval":
         from .acceptance import evaluate_application
@@ -72,13 +77,17 @@ def main() -> int:
 
         import uvicorn
 
-        from .config import Settings
-        from .server import create_app
+        from .team.api import create_team_app
 
-        settings = Settings.from_env()
+        application = create_team_app()
+        host = args.host or os.getenv("APP_HOST", "127.0.0.1")
+        if host not in {"127.0.0.1", "localhost", "::1"} and not (
+            args.container and host == "0.0.0.0"
+        ):
+            parser.error("Local Teams requires a loopback host: 127.0.0.1, localhost or ::1")
         uvicorn.run(
-            create_app(settings),
-            host=args.host or os.getenv("APP_HOST", "127.0.0.1"),
+            application,
+            host=host,
             port=args.port or int(os.getenv("APP_PORT", "8765")),
         )
         return 0

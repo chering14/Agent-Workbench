@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "00-start",
+    "title": "00 · 从完整成品开始"
+  },
+  {
+    "slug": "01-product",
+    "title": "01 · 把工作群变成可执行的产品"
+  },
+  {
+    "slug": "02-python",
+    "title": "02 · 读懂项目需要的 Python"
+  },
+  {
+    "slug": "03-contracts",
+    "title": "03 · 契约、API 与本机边界"
+  },
+  {
+    "slug": "04-storage",
+    "title": "04 · SQLite、事件与可恢复状态"
+  },
+  {
+    "slug": "05-models",
+    "title": "05 · 模型接口与工具调用循环"
+  },
+  {
+    "slug": "06-scheduling",
+    "title": "06 · 分工、依赖和调度状态机"
+  },
+  {
+    "slug": "07-context",
+    "title": "07 · 共享上下文与 Token 成本"
+  },
+  {
+    "slug": "08-workspaces",
+    "title": "08 · 工作副本、差异与成果合入"
+  },
+  {
+    "slug": "09-tools",
+    "title": "09 · 工具执行、确认与幂等"
+  },
+  {
+    "slug": "10-skills",
+    "title": "10 · Skills：把经验变成按需资料"
+  },
+  {
+    "slug": "11-mcp",
+    "title": "11 · MCP：连接外部工具"
+  },
+  {
+    "slug": "12-plugins",
+    "title": "12 · 声明式插件与扩展管理"
+  },
+  {
+    "slug": "13-verification",
+    "title": "13 · 浏览器、测试与可运行成果"
+  },
+  {
+    "slug": "14-interface",
+    "title": "14 · 原生 Web、SSE 与页面状态"
+  },
+  {
+    "slug": "15-tests",
+    "title": "15 · 测试、评测和证据的层次"
+  },
+  {
+    "slug": "16-operations",
+    "title": "16 · 配置、部署、备份与排障"
+  },
+  {
+    "slug": "17-walkthrough",
+    "title": "17 · 一次项目从需求到交付，以及如何改功能"
+  }
+]
